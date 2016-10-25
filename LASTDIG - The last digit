@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int bigmod(int b,int p)
+{
+    if(p==0) return 1;
+    int x=bigmod(b,p/2);
+    x=(x*x)%10;
+    if(p&1) x=(x*b)%10;
+    return x;
+}
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int a,b;
+        scanf("%d%d",&a,&b);
+        printf("%d\n",bigmod(a,b));
+    }
+
+}
+
